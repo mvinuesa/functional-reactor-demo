@@ -1,11 +1,10 @@
-package com.mvinuesa.functional;
+package com.mvinuesa.demo.functional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
-import java.util.logging.Logger;
 import java.util.stream.Stream;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
@@ -24,7 +23,7 @@ class FunctionalStreamTest {
         Stream.of("Pepe", "Juan", "Pepito")
             .filter(name -> name.startsWith("Pep"))
             .map(name -> name + 1)
-            .forEach(newName -> LOGGER.info(newName));
+            .forEach(LOGGER::info);
 
         var optional = Optional
             .of(1)
@@ -51,15 +50,15 @@ class FunctionalStreamTest {
         assertEquals(3, optional.orElse(0));
     }
 
-    private Function<Integer, Integer> add2() {
-        return integer -> 2 + integer;
-    }
-
     @Test
     @DisplayName("testFunction4")
     void testFunction4() {
         UnaryOperator<Integer> add2 = integer -> 2 + integer;
         var optional = Optional.of(1).map(add2);
         assertEquals(3, optional.orElse(0));
+    }
+
+    private Function<Integer, Integer> add2() {
+        return integer -> 2 + integer;
     }
 }

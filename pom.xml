@@ -61,6 +61,16 @@
       <version>5.6.3</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.java-json-tools</groupId>
+      <artifactId>json-patch</artifactId>
+      <version>1.13</version>
+    </dependency>
+    <dependency>
+      <groupId>com.flipkart.zjsonpatch</groupId>
+      <artifactId>zjsonpatch</artifactId>
+      <version>0.4.12</version>
+    </dependency>
   </dependencies>
 
   <build>
